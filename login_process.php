@@ -44,6 +44,7 @@
 <div class="container m-3"> <!-- open container -->
 
 <?php
+session_start(); 
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -52,6 +53,9 @@ $secret_password = "frodo";
 
 if ($password == $secret_password) 
     {
+      $logged_in = True;
+      $_SESSION['logged_in'] = True;
+
 ?>
         <div class="alert alert-success" role="alert">
         Login success! 

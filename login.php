@@ -43,7 +43,14 @@
 
 <div class="container m-3"> <!-- open container -->
 
-<form action="login_final_process.php" method="post">
+<?php 
+session_start();
+
+$logged_in = $_SESSION['logged_in'];
+if ($logged_in == False) {
+?>  
+
+<form action="login_process.php" method="post">
 
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -59,7 +66,11 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-
+<?php
+} else { 
+  echo "You are already logged in! ";
+}
+?>
 
 </div>  <!-- close container -->
 

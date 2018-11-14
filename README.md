@@ -1,2 +1,2 @@
 # DesigningSolutionsThroughProgramming
-For our introduction to web programming class, taregtted for 9th grade students. 
+For our introduction to web programming class, targeted for 9th grade students. 

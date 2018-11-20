@@ -53,6 +53,15 @@ if ($logged_in == False) {
 <form action="login_process.php" method="post">
 
   <div class="form-group">
+
+<?php 
+  if ($_SESSION['wrong_password']) {
+    echo "<strong>The password was incorrect. Try again</strong><br />";
+  }
+?>
+
+
+  
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -89,3 +98,12 @@ if ($logged_in == False) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
+<p><?php 
+echo '<pre>';
+print_r(get_defined_vars()); 
+echo '</pre>';
+?>
+</p>

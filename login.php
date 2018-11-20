@@ -68,7 +68,11 @@ if ($logged_in == False) {
 
 <?php
 } else { 
-  echo "You are already logged in! ";
+  $email = $_SESSION['email'];
+  echo "You are already logged in as $email! ";
+  ?>
+  <a href="logout.php">Click here to logout</a>
+  <?php
 }
 ?>
 

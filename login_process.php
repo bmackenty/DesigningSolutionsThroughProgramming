@@ -53,13 +53,13 @@ $secret_password = "frodo";
 
 if ($password == $secret_password) 
     {
+
       $logged_in = True;
       $_SESSION['logged_in'] = True;
-
+      $_SESSION['email'] = $email;
+      header('location:login.php');
 ?>
-        <div class="alert alert-success" role="alert">
-        Login success! 
-        </div>
+
 
 <?php
 

@@ -64,12 +64,10 @@ if ($password == $secret_password)
 <?php
 
     } else {
-?>
-        <div class="alert alert-danger" role="alert">
-        Sorry, you are not logged in! 
-        </div>
-<?php
-
+      
+      $wrong_password = True;
+      $_SESSION['wrong_password'] = True;
+      header('location:login.php');
 
     }
 

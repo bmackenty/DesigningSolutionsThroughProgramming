@@ -35,11 +35,13 @@ if ($logged_in == False) {
 <?php 
   if ($_SESSION['wrong_password']) {
     echo "<strong>The password was incorrect. Try again</strong><br />";
+    unset($_SESSION['wrong_password']);
+  } elseif ($_SESSION['error_no_email']) {
+    echo "<strong>We can't find a user with that email address</strong><br />";
+    unset($_SESSION['error_no_email']);
   }
 ?>
 
-
-  
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

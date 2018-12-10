@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_array($result))
     $logged_in = True;
     $_SESSION['logged_in'] = True;
     $_SESSION['email'] = $email;
-    header('location:login.php');
+    header('location:index.php');
   } else {
     $wrong_password = True;
     $_SESSION['wrong_password'] = True;

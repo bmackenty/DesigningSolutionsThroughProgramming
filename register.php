@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
     <!-- Documentation: http://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
-    <!-- this file should be named register.php -->
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -26,8 +25,12 @@ include('header.php');
 <form action="register_process.php" method="post">
 
   <div class="form-group">
+    <label for="exampleInputUserName">User name</label>
+    <input type="text" name="username" class="form-control" id="exampleInputUserName" aria-describedby="userNameHelp" placeholder="Please enter a username">
+    <small id="userNameHelp" class="form-text text-muted">Please don't use a username which can identify you. But keep it appropriate, please.</small>
+  </div>
 
-
+  <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -38,7 +41,7 @@ include('header.php');
     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Click here to register</button>
 </form>
 
 

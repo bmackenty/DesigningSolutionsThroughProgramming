@@ -76,11 +76,9 @@ if ($logged_in == False) {
 
 <?php
 } else { 
-  $email = $_SESSION['email'];
-  echo "You are already logged in as $email! ";
-  ?>
-  <a href="logout.php">Click here to logout</a>
-  <?php
+// if someone is already logged in, why would
+// we want them on this page??
+header('location:index.php');
 }
 ?>
 

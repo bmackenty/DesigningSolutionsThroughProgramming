@@ -6,6 +6,7 @@ include('database_inc.php');
 // the lines below store the data submitted from a form
 $email = $_POST['email'];
 $password = $_POST['password'];
+$username = $_POST['username'];
 
 // the line below creates an encryped password. 
 // we encrypt passwords so if an EVIL HACKER accesses our database
@@ -18,8 +19,6 @@ $safe_password = password_hash($password,PASSWORD_DEFAULT);
 //  a new user into our users table.
 // TODO: check if a duplicate email address exists.
 
-$username = "Member";
-
 $result = mysqli_query($connect,
     "INSERT INTO `users` 
     (`username`, `password`, `email`) 
@@ -27,4 +26,3 @@ $result = mysqli_query($connect,
 
 
 ?>
-

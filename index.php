@@ -19,7 +19,7 @@
 include('header.php');
 ?>
 
-<div class="container m-3"> <!-- open container -->
+<div class="container my-3"> <!-- open container -->
 
 <?php 
 session_start();

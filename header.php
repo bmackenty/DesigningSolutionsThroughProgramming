@@ -22,7 +22,21 @@
 
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="">Login</a>
+                    <?php 
+                      session_start();
+                      $logged_in = $_SESSION['logged_in'];
+                      if ($logged_in == False) {
+                    ?>
+                      <a class="nav-link" href="login.php">Login</a>
+                    <?php
+                      } else {
+                    ?>
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    <?php
+                      }
+                    ?>
+                    
+                    
                     </li>
                   </ul>
                 </div>

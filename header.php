@@ -30,8 +30,16 @@
                       <a class="nav-link" href="login.php">Login</a>
                     <?php
                       } else {
+                        $email = $_SESSION['email'];
                     ?>
+                        <a class="nav-link" href="#">You are logged in as
+                        <?php echo $email; ?> </a>
+                        
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
+                        </li>
+
                     <?php
                       }
                     ?>

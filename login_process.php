@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) == 0) {
 while ($row = mysqli_fetch_array($result))
 {
   $password_in_databases = $row['password'];
-  if ($password == $password_in_databases) {
+  if (password_verify($password,$password_in_databases)) {
     $logged_in = True;
     $_SESSION['logged_in'] = True;
     $_SESSION['email'] = $email;

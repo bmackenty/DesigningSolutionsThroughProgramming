@@ -27,6 +27,11 @@
                       $logged_in = $_SESSION['logged_in'];
                       if ($logged_in == False) {
                     ?>
+
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="register.php">Sign up</a>
+                    </li>
                       <a class="nav-link" href="login.php">Login</a>
                     <?php
                       } else {

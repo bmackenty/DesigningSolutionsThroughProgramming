@@ -19,8 +19,12 @@
 include('header.php');
 ?>
 
-<div class="container m-3"> <!-- open container -->
+<div class="container my-3"> <!-- open container -->
 
+<div class="alert alert-info" role="alert">
+  <p> <strong>Thank you</strong> for registering.</p>
+  <p>New regsitrations need to approved by a moderator, so please be patient.</p>
+</div>
 
 <form action="register_process.php" method="post">
 

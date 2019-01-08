@@ -50,6 +50,8 @@ include('database_inc.php');
 
     <?php
         $id_to_edit = $_GET['id']; 
+        $_SESSION['id_to_edit'] = $id_to_edit;
+
         $result = mysqli_query($connect,
         "SELECT * FROM users WHERE id = $id_to_edit;");
         while ($row = mysqli_fetch_array($result))

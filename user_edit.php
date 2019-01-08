@@ -58,17 +58,17 @@ include('database_inc.php');
 
 <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
+    <input type="email" name="email" class="form-control" id="email1" aria-describedby="emailHelp" value="<?php echo $row['email']; ?>">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 </div>
 
 
 <div class="form-group">
     <label for="username">Username</label>
-    <input type="username" class="form-control" id="username1">
+    <input type="username" name="username" class="form-control" id="username1" value="<?php echo $row['username']; ?>">
 </div>
 
-
+<button type="submit" class="btn btn-primary">Submit</button>
 
 
     <?php 

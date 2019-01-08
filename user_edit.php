@@ -46,21 +46,34 @@ include('database_inc.php');
 <div class="row my-2">
     <div class="col-12">
 
+<form action="user_edit_process.php" method="POST">
+
     <?php
         $id_to_edit = $_GET['id']; 
         $result = mysqli_query($connect,
         "SELECT * FROM users WHERE id = $id_to_edit;");
         while ($row = mysqli_fetch_array($result))
-        { 
-            ?>
-            <tr>
-            <th><?php echo $row['id']; ?> </th>
-            <td><?php echo $row['username']; ?> </td>
-            <td><?php echo $row['email']; ?> </td>
-          </tr>
-            <?php 
-                }
-            ?>
+        {             
+    ?>
+
+<div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+
+
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="username" class="form-control" id="username1">
+</div>
+
+
+
+
+    <?php 
+        }
+    ?>
             </tbody>
             </table>
     </div>

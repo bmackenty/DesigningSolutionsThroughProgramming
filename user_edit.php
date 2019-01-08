@@ -68,6 +68,12 @@ include('database_inc.php');
     <input type="username" name="username" class="form-control" id="username1" value="<?php echo $row['username']; ?>">
 </div>
 
+<div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control" id="password1">
+</div>
+
+
 <button type="submit" class="btn btn-primary">Submit</button>
 
 

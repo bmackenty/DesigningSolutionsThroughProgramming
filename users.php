@@ -30,8 +30,6 @@ include('database_inc.php');
 
 </div> <!-- /container -->
 
-</main>
-
 
 <?php
 } else { 

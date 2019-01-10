@@ -1,6 +1,7 @@
       <?php 
       session_start();
       $logged_in = $_SESSION['logged_in'];
+      $role = $_SESSION['role'];
       ?>
       <!-- start nav bar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -14,7 +15,7 @@
                       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <?php 
-                    if ($logged_in){?>
+                    if ($role == "Administrator"){?>
                     <li class="nav-item">
                       <a class="nav-link" href="users.php">Manage users</a>
                     </li>

@@ -29,14 +29,14 @@ $safe_password = password_hash($password,PASSWORD_DEFAULT);
 // the lines below execute an SQL query that insert
 //  a new user into our users table.
 // TODO: check if a duplicate email address exists.
+// TODO: add last_logged_in
 
 $result = mysqli_query($connect,
     "INSERT INTO `users` 
-    (`username`, `password`, `email`) 
-    VALUES ('$username', '$safe_password', '$email');");
+    (`username`, `password`, `email`, `role`) 
+    VALUES ('$username', '$safe_password', '$email', 'member');");
 
 $_SESSION['registered_success'] = True;
 header('location:index.php');
 
 ?>
-

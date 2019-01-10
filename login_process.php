@@ -36,6 +36,7 @@ while ($row = mysqli_fetch_array($result))
     $logged_in = True;
     $_SESSION['logged_in'] = True;
     $_SESSION['email'] = $email;
+    $_SESSION['role'] = $role;
     $_SESSION['id_of_logged_in_user'] = $id_of_logged_in_user;
     header('location:index.php');
   } else {

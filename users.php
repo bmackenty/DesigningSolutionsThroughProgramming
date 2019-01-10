@@ -19,6 +19,40 @@
 session_start();
 include('header.php');
 include('database_inc.php');
+// the function below convert a time stamp into (for example) 3 days ago.
+// I use it with gratitude from https://stackoverflow.com/questions/1416697/converting-timestamp-to-time-ago-in-php-e-g-1-day-ago-2-days-ago
+// we call this function below, where we output a list of users.
+function time_elapsed_string($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
+
+
 ?>
 
 <div class="container my-3"> <!-- open container -->
@@ -67,6 +101,7 @@ include('database_inc.php');
                 <tr>
                 <th scope="col">id</th>
                 <th scope="col">user name</th>
+                <th scope="col">Last logged in</th>
                 <th scope="col">e-mail</th>
                 <th scope="col">role</th>
                 <th scope="col">action</th>
@@ -79,10 +114,12 @@ include('database_inc.php');
         "SELECT * FROM users;");
         while ($row = mysqli_fetch_array($result))
         { 
+            $last_logged_in = $row['last_logged_in'];
             ?>
             <tr>
                 <th><?php echo $row['id']; ?> </th>
                 <td><?php echo $row['username']; ?> </td>
+                <td><?php echo time_elapsed_string($last_logged_in); ?></td>
                 <td><?php echo $row['email']; ?> </td>
                 <td><?php echo $row['role']; ?> </td>
                 <td><?php echo "<a href=\"user_edit.php?id=" . $row['id']. "\">Edit</a>"; ?> 

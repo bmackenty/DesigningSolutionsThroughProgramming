@@ -75,6 +75,15 @@ include('database_inc.php');
     <input type="password" name="password" class="form-control" id="password1">
 </div>
 
+<div class="form-group">
+      <label for="role">Role</label>
+      <select name="role" id="role" class="form-control">
+        <option selected>Member</option>
+        <option>Administrator</option>
+        <option>Banned</option>
+      </select>
+    </div>
+
 
 <button type="submit" class="btn btn-primary">Submit</button>
 

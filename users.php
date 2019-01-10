@@ -68,6 +68,7 @@ include('database_inc.php');
                 <th scope="col">id</th>
                 <th scope="col">user name</th>
                 <th scope="col">e-mail</th>
+                <th scope="col">role</th>
                 <th scope="col">action</th>
                 </tr>
             </thead>
@@ -83,6 +84,7 @@ include('database_inc.php');
                 <th><?php echo $row['id']; ?> </th>
                 <td><?php echo $row['username']; ?> </td>
                 <td><?php echo $row['email']; ?> </td>
+                <td><?php echo $row['role']; ?> </td>
                 <td><?php echo "<a href=\"user_edit.php?id=" . $row['id']. "\">Edit</a>"; ?> 
 
                 <?php 

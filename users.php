@@ -24,11 +24,14 @@ include('database_inc.php');
 <div class="container my-3"> <!-- open container -->
 <?php 
     $logged_in = $_SESSION['logged_in'];
+    $email = $_SESSION['email'];
     if ($logged_in == False) {
     header('location:index.php');
 ?>
 
 </div> <!-- /container -->
+
+</main>
 
 
 <?php
@@ -62,11 +65,23 @@ include('database_inc.php');
         { 
             ?>
             <tr>
-            <th><?php echo $row['id']; ?> </th>
-            <td><?php echo $row['username']; ?> </td>
-            <td><?php echo $row['email']; ?> </td>
-            <td><?php echo "<a href=\"user_edit.php?id=" . $row['id']. "\">Edit</a>"; ?> </td>
-          </tr>
+                <th><?php echo $row['id']; ?> </th>
+                <td><?php echo $row['username']; ?> </td>
+                <td><?php echo $row['email']; ?> </td>
+                <td><?php echo "<a href=\"user_edit.php?id=" . $row['id']. "\">Edit</a>"; ?> 
+
+                <?php 
+                // We want the admin to delete users, but we never want the admin to delete their own account.
+                // So we use a conditional, like below. $email is the $email of the currently logged in user. 
+                
+                if ($row['email'] != $email) {
+
+                echo " | <a href=\"user_delete.php?id=" . $row['id']. "\">Delete</a>"; 
+                
+                }
+                
+                ?> </td>
+            </tr>
             <?php 
                 }
             ?>

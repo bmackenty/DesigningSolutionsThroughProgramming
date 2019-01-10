@@ -57,9 +57,10 @@ function time_elapsed_string($datetime, $full = false) {
 
 <div class="container my-3"> <!-- open container -->
 <?php 
+    $role = $_SESSION['role'];
     $logged_in = $_SESSION['logged_in'];
     $email = $_SESSION['email'];
-    if ($logged_in == False) {
+    if ($role != "Administrator") {
     header('location:index.php');
 ?>
 

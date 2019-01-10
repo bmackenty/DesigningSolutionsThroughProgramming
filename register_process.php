@@ -34,7 +34,7 @@ $safe_password = password_hash($password,PASSWORD_DEFAULT);
 $result = mysqli_query($connect,
     "INSERT INTO `users` 
     (`username`, `password`, `email`, `role`) 
-    VALUES ('$username', '$safe_password', '$email', 'member');");
+    VALUES ('$username', '$safe_password', '$email', 'Member');");
 
 $_SESSION['registered_success'] = True;
 header('location:index.php');

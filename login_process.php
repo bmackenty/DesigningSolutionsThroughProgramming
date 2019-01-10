@@ -35,10 +35,18 @@ while ($row = mysqli_fetch_array($result))
     $id_of_logged_in_user = $row['id'];
     $role = $row['role'];
     $logged_in = True;
+
+    // we set assign the following session variables so we can use access to the site
     $_SESSION['logged_in'] = True;
     $_SESSION['email'] = $email;
     $_SESSION['role'] = $role;
     $_SESSION['id_of_logged_in_user'] = $id_of_logged_in_user;
+
+    // we need to update the last_login.
+    // MySQL expects the date to be in a specific format
+    // https://stackoverflow.com/questions/2215354/php-date-format-when-inserting-into-datetime-in-mysql
+    $time_date_now = date("Y-m-d H:i:s");
+    $result2 = mysqli_query($connect,"UPDATE users SET last_logged_in = '$time_date_now' WHERE id = '$id_of_logged_in_user';");
     header('location:index.php');
   } else {
     $wrong_password = True;

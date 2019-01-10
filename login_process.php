@@ -15,7 +15,7 @@ $password = $_POST['password'];
 $result = mysqli_query($connect,
 "SELECT * FROM users WHERE email LIKE '$email';");
 
-// the line below tests if our database query founf any results. 
+// the line below tests if our database query found any results. 
 
 if (mysqli_num_rows($result) == 0) {
   $no_email = True;
@@ -32,17 +32,17 @@ while ($row = mysqli_fetch_array($result))
 {
   $password_in_databases = $row['password'];
   if (password_verify($password,$password_in_databases)) {
+    $id_of_logged_in_user = $row['id'];
     $logged_in = True;
     $_SESSION['logged_in'] = True;
     $_SESSION['email'] = $email;
+    $_SESSION['id_of_logged_in_user'] = $id_of_logged_in_user;
     header('location:index.php');
   } else {
     $wrong_password = True;
     $_SESSION['wrong_password'] = True;
     header('location:login.php');
-
   }
-
 }
 
 } // this closes the condition that checks if there were any results. 

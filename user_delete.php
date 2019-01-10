@@ -10,10 +10,11 @@
     $logged_in = $_SESSION['logged_in'];
     $email = $_SESSION['email'];
     $id_of_logged_in_user = $_SESSION['id_of_logged_in_user'];
+    $role = $_SESSION['role'];
     
     // we don't want a non-logged in user to access this page
     
-    if ($logged_in == False) {
+    if ($role != "Administrator") {
         header('location:index.php');
     } else {
 

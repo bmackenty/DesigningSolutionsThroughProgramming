@@ -60,7 +60,8 @@ function time_elapsed_string($datetime, $full = false) {
     $role = $_SESSION['role'];
     $logged_in = $_SESSION['logged_in'];
     $email = $_SESSION['email'];
-    if ($role != "Administrator") {
+    $session_id_of_logged_in_user = $_SESSION['session_id_of_logged_in_user'];
+    if ($role != "Administrator" && (session_id() == $session_id_of_logged_in_user)) {
     header('location:index.php');
 ?>
 

@@ -41,6 +41,7 @@ while ($row = mysqli_fetch_array($result))
     $_SESSION['email'] = $email;
     $_SESSION['role'] = $role;
     $_SESSION['id_of_logged_in_user'] = $id_of_logged_in_user;
+    $_SESSION['session_id_of_logged_in_user'] = session_id();
 
     // we need to update the last_login.
     // MySQL expects the date to be in a specific format

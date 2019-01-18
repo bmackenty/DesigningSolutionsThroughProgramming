@@ -26,6 +26,14 @@ $username = mysqli_real_escape_string($connect,$username);
 
 $safe_password = password_hash($password,PASSWORD_DEFAULT);
 
+// every user should have a very unique id connected to their account
+// this is a little different than the unique id we use when creating a user
+// it is technically possible that a user could have the same email and same database id
+// ok, ok, it's unlikely, but still. We need to make sure a user authenticated in one site
+// cannot access another with the same session variables (login = 1, for example)
+
+$unique_id = uniqid($more_entropy = TRUE);
+
 // the lines below execute an SQL query that insert
 //  a new user into our users table.
 // TODO: check if a duplicate email address exists.
@@ -33,10 +41,10 @@ $safe_password = password_hash($password,PASSWORD_DEFAULT);
 
 $result = mysqli_query($connect,
     "INSERT INTO `users` 
-    (`username`, `password`, `email`, `role`) 
-    VALUES ('$username', '$safe_password', '$email', 'Member');");
+    (`username`, `password`, `email`, `role`, `unique_id`) 
+    VALUES ('$username', '$safe_password', '$email', 'Member', '$unique_id');");
 
 $_SESSION['registered_success'] = True;
-header('location:index.php');
-
+//header('location:index.php');
+include('footer.php');
 ?>

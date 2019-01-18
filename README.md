@@ -1,8 +1,10 @@
 # DesigningSolutionsThroughProgramming
-For our introduction to web programming class, targeted for 9th grade students. 
+For our introduction to web programming class, targeted for 9th grade students (15 years old).
 
-Students will use these templates as a starting point to build a web application. I know there are huge security issues here, especially with our database operations being non-PDO and passwords being stored as plaintext. 
+For many students, this is their first programming class, where they write programs in an IDE, upload changes to a remote server, work with the Linux operating system, MYSQL, work with git (a little), and use PHP, CSS, HTML, the Bootstrap framework to create a "real" program. 
 
-Both of those issues will be addressed in future versions of this template code.
+Students will use these templates as a starting point to build a web application. 
 
-If you have any suggestions or ideas for improvement, please email Bill MacKenty, bmackenty@aswarsaw.org or bmackenty@gmail.com
+I know there are some security and performance issues here. I often first sacrfice complexity and the "right way" to help students understand and then slowly build more formal, secure (and performant) code. 
+
+If you have any suggestions or ideas for improvement, please email Bill MacKenty, bmackenty@aswarsaw.org or bmackenty@gmail.com, or open an issue. 

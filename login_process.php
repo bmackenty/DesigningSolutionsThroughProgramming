@@ -48,9 +48,17 @@ while ($row = mysqli_fetch_array($result))
     // we need to update the last_login.
     // MySQL expects the date to be in a specific format
     // https://stackoverflow.com/questions/2215354/php-date-format-when-inserting-into-datetime-in-mysql
-    
+
     $time_date_now = date("Y-m-d H:i:s");
-    $result2 = mysqli_query($connect,"UPDATE users SET last_logged_in = '$time_date_now', logged_in_now = 1 WHERE id = '$id_of_logged_in_user';");
+    $session_id = session_id();
+    
+    $result2 = mysqli_query($connect,"UPDATE users SET 
+    last_logged_in = '$time_date_now', 
+    logged_in_now = 1,
+    session_id = '$session_id'
+     WHERE id = '$id_of_logged_in_user';");
+
+
     header('location:index.php');
   } else {
     $wrong_password = True;

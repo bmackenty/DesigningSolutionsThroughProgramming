@@ -35,13 +35,15 @@ while ($row = mysqli_fetch_array($result))
     $id_of_logged_in_user = $row['id'];
     $role = $row['role'];
     $logged_in = True;
+    $unique_id_of_logged_in_user = $row['unique_id'];
 
     // we set assign the following session variables so we can use access to the site
+    
     $_SESSION['logged_in'] = True;
     $_SESSION['email'] = $email;
     $_SESSION['role'] = $role;
     $_SESSION['id_of_logged_in_user'] = $id_of_logged_in_user;
-    $_SESSION['session_id_of_logged_in_user'] = session_id();
+    $_SESSION['unique_id_of_logged_in_user'] = $unique_id_of_logged_in_user;
 
     // we need to update the last_login.
     // MySQL expects the date to be in a specific format

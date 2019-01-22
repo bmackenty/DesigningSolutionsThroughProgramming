@@ -45,6 +45,5 @@ $result = mysqli_query($connect,
     VALUES ('$username', '$safe_password', '$email', 'Member', '$unique_id');");
 
 $_SESSION['registered_success'] = True;
-//header('location:index.php');
-include('footer.php');
+header('location:index.php');
 ?>

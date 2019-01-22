@@ -19,12 +19,12 @@
 session_start();
 include('header.php');
 include('database_inc.php');
+include('access_control.php');
 ?>
 
 <div class="container my-3"> <!-- open container -->
 <?php 
-    $logged_in = $_SESSION['logged_in'];
-    if ($logged_in == False) {
+    if ($access_control['logged_in'] == "no") {
     header('location:index.php');
 ?>
 

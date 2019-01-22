@@ -1,11 +1,11 @@
       <?php 
       session_start();
-      $logged_in = $_SESSION['logged_in'];
-      $role = $_SESSION['role'];
+      include('access_control.php');
+
       ?>
       <!-- start nav bar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">My Application</a>
+                <a class="navbar-brand" href="index.php">My Application</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -15,7 +15,7 @@
                       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <?php 
-                    if ($role == "Administrator"){?>
+                    if ($access_control['role'] == "Administrator"){?>
                     <li class="nav-item">
                       <a class="nav-link" href="users.php">Manage users</a>
                     </li>
@@ -27,7 +27,7 @@
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                     <?php 
-                      if ($logged_in == False) {
+                      if ($access_control['logged_in'] == "no") {
                     ?>
 
                     </li>
@@ -37,10 +37,9 @@
                       <a class="nav-link" href="login.php">Login</a>
                     <?php
                       } else {
-                        $email = $_SESSION['email'];
                     ?>
                         <a class="nav-link" href="#">You are logged in as
-                        <?php echo $email; ?> </a>
+                        <?php echo $access_control['email']; ?> </a>
                         
                         </li>
                         <li class="nav-item">

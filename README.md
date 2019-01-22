@@ -5,7 +5,7 @@ For many students, this is their first programming class, where they write progr
 
 Students will use these templates as a starting point to build a web application. 
 
-I know there are some security and performance issues here. I often first sacrfice complexity and the "right way" to help students understand the basics and then slowly build more formal, secure (and performant) code. I also try to over-comment code to help beginning programmers understand how things work.
+I know there are some security and performance issues here. I often first sacrifice complexity and the "right way" to help students understand the basics and then slowly build more formal, secure (and performant) code. I also try to over-comment code to help beginning programmers understand how things work.
 
 This code assumes a LAMP environment: Linux, Apache, MySQL and PHP. We host on Linode.
 

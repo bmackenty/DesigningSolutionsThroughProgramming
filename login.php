@@ -23,9 +23,9 @@ include('header.php');
 
 <?php 
 session_start();
+include('access_control.php');
 
-$logged_in = $_SESSION['logged_in'];
-if ($logged_in == False) {
+if ($access_control['logged_in'] == "no") {
 ?>  
 
 <form action="login_process.php" method="post">

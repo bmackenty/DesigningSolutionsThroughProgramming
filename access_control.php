@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_array($access_logged_in_check_query))
 // we can assume we have a logged in user. 
 
 if((isset($unique_id_of_logged_in_user) && isset($unique_id_from_database)) &&  $unique_id_of_logged_in_user == $unique_id_from_database) {
-    $access_control = array("logged_in"=>"yes");
+    $access_control = array("logged_in"=>"yes", "role"=>$role_from_database);
 } else {
     $access_control = array("logged_in"=>"no");
     

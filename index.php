@@ -17,6 +17,7 @@
       
 <?php 
 include('header.php');
+include('access_control.php');
 ?>
 
 <div class="container my-3"> <!-- open container -->
@@ -37,9 +38,7 @@ if($_SESSION['registered_success']) {
 <?php
 unset($_SESSION['registered_success']);
 }
-
-$logged_in = $_SESSION['logged_in'];
-if ($logged_in == False) {
+if ($access_control['logged_in'] == "no") {
 ?>
 
  <main role="main">

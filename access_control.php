@@ -14,7 +14,8 @@ $access_logged_in_check_query = mysqli_query($connect,"SELECT * FROM users WHERE
 // if there is a result, we assign the unique ID to a variable 
 while ($row = mysqli_fetch_array($access_logged_in_check_query))
 { 
-$unique_id_from_database = $row['unique_id'];
+    $unique_id_from_database = $row['unique_id'];
+    $role_from_database = $row['role'];
 }
 
 // if both the unique id is set and the id from the database is set, AND the id of the logged in user is the same in the database,
@@ -24,6 +25,5 @@ if((isset($unique_id_of_logged_in_user) && isset($unique_id_from_database)) &&  
     $access_control = array("logged_in"=>"yes");
 } else {
     $access_control = array("logged_in"=>"no");
-
+    
 }
-

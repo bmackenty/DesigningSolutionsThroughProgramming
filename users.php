@@ -19,6 +19,8 @@
 session_start();
 include('header.php');
 include('database_inc.php');
+include('access_control.php');
+
 // the function below convert a time stamp into (for example) 3 days ago.
 // I use it with gratitude from https://stackoverflow.com/questions/1416697/converting-timestamp-to-time-ago-in-php-e-g-1-day-ago-2-days-ago
 // we call this function below, where we output a list of users.
@@ -57,11 +59,8 @@ function time_elapsed_string($datetime, $full = false) {
 
 <div class="container my-3"> <!-- open container -->
 <?php 
-    $role = $_SESSION['role'];
-    $logged_in = $_SESSION['logged_in'];
-    $email = $_SESSION['email'];
-    $session_id_of_logged_in_user = $_SESSION['session_id_of_logged_in_user'];
-    if ($role != "Administrator" && (session_id() == $session_id_of_logged_in_user)) {
+
+    if ($access_control['role'] != "Administrator") {
     header('location:index.php');
 ?>
 

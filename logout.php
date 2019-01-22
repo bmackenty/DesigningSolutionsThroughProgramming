@@ -8,11 +8,11 @@
 
 session_start();
 
-if (isset($_SESSION['id_of_logged_in_user'])) {
+if (isset($_SESSION['unique_id_of_logged_in_user'])) {
 
-    $id_of_logged_in_user = $_SESSION['id_of_logged_in_user'];
+    $unique_id_of_logged_in_user = $_SESSION['unique_id_of_logged_in_user'];
     include('database_inc.php');
-    $logout_query = mysqli_query($connect,"UPDATE users SET logged_in_now = 0 WHERE id = '$id_of_logged_in_user';");
+    $logout_query = mysqli_query($connect,"UPDATE users SET logged_in_now = 0 WHERE id = '$unique_id_of_logged_in_user';");
 
     // the code from 2 lines below is used from https://stackoverflow.com/questions/3989347/php-why-cant-i-get-rid-of-this-session-id-cookie
     $params = session_get_cookie_params();

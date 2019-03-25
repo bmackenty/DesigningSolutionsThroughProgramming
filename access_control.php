@@ -18,6 +18,7 @@ while ($row = mysqli_fetch_array($access_logged_in_check_query))
     $role_from_database = $row['role'];
     $email = $row['email'];
     $username = $row['username'];
+    $id = $row['id'];
 }
 
 // if both the unique id is set and the id from the database is set, AND the id of the logged in user is the same in the database,

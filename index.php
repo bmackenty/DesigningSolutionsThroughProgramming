@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<!-- This file is part of a ointroduction to programming couse for 9th grade students -->
+<!-- This file is part of an introduction to programming couse for 9th grade students -->
 <!-- github repo: https://github.com/bmackenty/DesigningSolutionsThroughProgramming --> 
 <!-- Bootstrap documentation: http://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
 

@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- </head>
+</head>
 <body>
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
@@ -34,6 +34,10 @@
     <tr>
       <td><a href="store_delete_item.php">Delete item</a></td>
       <td>Delete an inventory item from our school store.</td>
+    </tr>
+    <tr>
+      <td><a href="inventory.php">See Inventory</a></td>
+      <td>See store inventory</td>
     </tr>
   </tbody>
 </table>

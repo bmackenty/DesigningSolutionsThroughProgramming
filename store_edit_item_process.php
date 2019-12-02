@@ -107,7 +107,7 @@ while ($row = mysqli_fetch_array($result))
     value = "<?php echo $row['image']; ?>">
 
   </div>
-
+<input type="hidden" name="item_to_edit" value="<?php echo $item_to_edit; ?>">
 
   <button type="submit" class="btn btn-primary">Edit this item</button>
 </form>

@@ -30,7 +30,6 @@
   <?php
 
 include('database_inc.php');
-
 $result = mysqli_query($connect,
 "SELECT * FROM items;");
 
@@ -42,7 +41,7 @@ while ($row = mysqli_fetch_array($result))
       <td><?php echo $row['description']; ?></td>
       <td><?php echo $row['size']; ?></td>
       <td><?php echo $row['price']; ?></td>
-      <td>Order Now!</td>
+      <td><a href="store_order_item.php?id=<?php echo $row['id']; ?>">Click here to order</a>    </td>
     </tr>
 
   <?php

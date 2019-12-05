@@ -12,7 +12,9 @@
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
     <!-- =========================================== -->
+    <?php include('store_navbar.php'); ?>
 <div class="container mt-5">
+
 
 <table class="table table-hover table-bordered table-striped">
   <thead>

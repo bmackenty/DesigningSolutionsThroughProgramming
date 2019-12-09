@@ -11,12 +11,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="store_control_panel.php">Control Panel</a>
                 </li>
-
-
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="store_login.php">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="register.php">Register</a>

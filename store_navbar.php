@@ -18,7 +18,7 @@
                     <a class="nav-link" href="store_login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.php">Register</a>
+                    <a class="nav-link" href="store_register.php">Register</a>
                 </li>
             </ul>
         </div>

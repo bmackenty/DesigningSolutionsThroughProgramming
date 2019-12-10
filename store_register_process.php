@@ -18,13 +18,26 @@ $email = mysqli_real_escape_string($connect,$email);
 // to decipher
 $safe_password = password_hash($password,PASSWORD_DEFAULT);
 
+// we need to see if there is a duplicate email address
+// the first thing we need to do is see if their email 
 
-// the lines below execute an SQL query that insert
-//  a new user into our users table.
+$check_for_duplicate_email = mysqli_query($connect, "SELECT * from users WHERE email = '$email';");
 
-$result = mysqli_query($connect,
+if (mysqli_num_rows($check_for_duplicate_email) == 0) {
+
+    $result = mysqli_query($connect,
     "INSERT INTO `users` 
     (`password`, `email`) 
     VALUES ('$safe_password', '$email');");
-header('location:store_control_panel.php');
+    header('location:store_control_panel.php');
+
+} else {
+
+    // the lines below execute an SQL query that insert
+    //  a new user into our users table.
+
+    echo "I am sorry you cant use that email address";
+
+}
+
 ?>

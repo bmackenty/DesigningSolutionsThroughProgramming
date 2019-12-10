@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- this file should be named store_edit_process.php -->
+<!-- this file should be named store_user_edit_process.php -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -74,4 +74,3 @@ while ($row = mysqli_fetch_array($result))
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-

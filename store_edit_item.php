@@ -12,6 +12,7 @@
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
     <!-- =========================================== -->
+    <?php include('store_navbar.php'); ?>
 <div class="container mt-5">
 
 <table class="table table-hover table-bordered table-striped">
@@ -44,18 +45,11 @@ while ($row = mysqli_fetch_array($result))
       <td><?php echo $row['price']; ?></td>
       <td><a href="store_edit_item_process.php?id=<?php echo $row['id']; ?>">Edit this item</a></td>
     </tr>
-
   <?php
-
 }
-
-
 ?>
-  
   </tbody>
 </table>
-
-
 </div> <!-- close the container -->
     
     <!-- =========================================== -->

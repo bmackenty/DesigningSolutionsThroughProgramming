@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_array($result))
       <td><?php echo $row['email']; ?></td>
       <td><?php echo $row['password']; ?></td>
       <td>
-      <a href="store_user_edit_process.php?id=<?php echo $row['id']; ?>">Edit this user</a>
+      <a href="store_user_edit.php?id=<?php echo $row['id']; ?>">Edit this user</a>
       |
       <a href="store_user_delete_process.php?id=<?php echo $row['id']; ?>">Delete this user</a>
 

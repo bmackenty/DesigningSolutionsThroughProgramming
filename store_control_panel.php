@@ -41,7 +41,7 @@
       <td>See store inventory</td>
     </tr>
     <tr>
-      <td><a href="store_edit_users.php">Control users</a></td>
+      <td><a href="store_user_control_panel.php">Control users</a></td>
       <td>See, edit, or delete users</td>
     </tr>
   </tbody>

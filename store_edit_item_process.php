@@ -25,7 +25,7 @@
         include('database_inc.php');
 
     ?>
-
+<?php include('store_navbar.php'); ?>
 <div class="container mt-5">
 
 <?php 

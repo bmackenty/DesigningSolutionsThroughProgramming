@@ -36,7 +36,7 @@ $result = mysqli_query($connect, "SELECT * from users WHERE id = '$user_to_edit'
 while ($row = mysqli_fetch_array($result))
 {
     ?>
-<form action = "store_user_process_a_user.php" method="POST">
+<form action = "store_user_edit_process.php" method="POST">
 
   <div class="form-group">
     <label for="description">Email</label>

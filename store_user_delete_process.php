@@ -8,6 +8,6 @@ $user_id_to_delete = $_GET['id'];
 include('database_inc.php');
 
 $result = mysqli_query($connect,"DELETE FROM users WHERE id = '$user_id_to_delete';");
-header('location:store_edit_users.php');
+header('location:store_user_control_panel.php');
 
 ?>

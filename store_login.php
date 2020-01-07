@@ -12,8 +12,43 @@
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
     <!-- =========================================== -->
-    <?php include('store_navbar.php'); ?>
+    <?php 
+        session_start();
+        include('store_navbar.php'); 
+    ?>
     <div class="container mt-5">
+
+<?php 
+if ($_SESSION['error_wrong_password']){
+    ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Error</strong> Wrong Password. Please try again.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<?php
+}
+unset($_SESSION['error_wrong_password']);
+?>
+
+
+<?php 
+if ($_SESSION['error_no_email']){
+    ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Error</strong> There is no email like that in our system.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<?php
+}
+unset($_SESSION['error_no_email']);
+?>
+
+
+
 
     <form action="store_login_process.php" method="POST">
         <div class="form-group">

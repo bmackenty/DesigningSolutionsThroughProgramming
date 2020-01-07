@@ -47,9 +47,6 @@ if ($_SESSION['error_no_email']){
 unset($_SESSION['error_no_email']);
 ?>
 
-
-
-
     <form action="store_login_process.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>

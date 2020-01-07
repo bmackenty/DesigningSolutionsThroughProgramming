@@ -17,7 +17,9 @@ $result = mysqli_query($connect,
 
 // the line below tests if our database query found any results. 
 if (mysqli_num_rows($result) == 0) {
-    echo "There is no email in our system.";
+  $_SESSION['error_no_email'] = True;
+  header('location:store_login.php');
+
 } else {
 
 // the loop below iterates through the results (if there are any)
@@ -32,13 +34,15 @@ while ($row = mysqli_fetch_array($result))
     // this conditional is only true is the password which was entered in our form 
     // is the same as the encypted password stored in our database. 
 
-    echo "you are now logged in";
     $_SESSION['logged_in'] = True;
+    $_SESSION['logged_in_user'] = $email;
+    header('location:store_inventory.php');
 
   } else {
 
     // this conditional is true if the password did NOT match. 
-    echo "Your password does not match.";
+    $_SESSION['error_wrong_password'] = True;
+    header('location:store_login.php');
   }
 }
 } // this closes the condition that checks if there were any results. 

@@ -27,7 +27,7 @@
     <br />
     <br />
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Warning</strong> You must be logged-in to see this page. <br />
+      <strong>Warning</strong> You must be logged-in to see this page.
       <a href="store_inventory.php" class="alert-link">Click here to return to home page.</a>.
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>

@@ -13,8 +13,30 @@
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
     <!-- =========================================== -->
-    <?php include('store_navbar.php'); ?>
-<div class="container mt-5">
+
+    <?php 
+    session_start();
+    include('store_navbar.php'); 
+    ?>
+    <div class="container mt-5">
+    <?php
+    
+    if(!$_SESSION['logged_in']){
+    // we don't want a user who isn't logged in to see this page.
+    ?>
+    <br />
+    <br />
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Warning</strong> You must be logged-in to see this page. <br />
+      <a href="store_inventory.php" class="alert-link">Click here to return to home page.</a>.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+<?php   
+    } else {
+    ?>
 
 <table class="table table-hover table-bordered table-striped">
   <thead>
@@ -48,8 +70,12 @@
 </table>
 
 
+<?php
+    } // this closes the conditional for a logged-in or logged out user
+  ?>
+
 </div> <!-- close the container -->
-    
+
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING BELOW THIS LINE -->
     <!-- =========================================== -->

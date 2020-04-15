@@ -13,51 +13,51 @@
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
     <!-- =========================================== -->
     <?php include('store_navbar.php'); ?>
-<div class="container mt-5">
+      <div class="container mt-5">
 
 
-<table class="table table-hover table-bordered table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Description</th>
-      <th scope="col">Size</th>
-      <th scope="col">Cost</th>
-      <th scope="col">Order this</th>
-    </tr>
-  </thead>
-<tbody>
-  
-  
-  <?php
+      <table class="table table-hover table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Description</th>
+            <th scope="col">Size</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Order this</th>
+          </tr>
+        </thead>
+      <tbody>
+        
+        
+        <?php
 
-include('database_inc.php');
-$result = mysqli_query($connect,
-"SELECT * FROM items;");
+      include('database_inc.php');
+      $result = mysqli_query($connect,
+      "SELECT * FROM items;");
 
-while ($row = mysqli_fetch_array($result))
-{
-?>
-    <tr>
-      <th scope="row"><?php echo $row['id']; ?></th>
-      <td><?php echo $row['description']; ?></td>
-      <td><?php echo $row['size']; ?></td>
-      <td><?php echo $row['price']; ?></td>
-      <td><a href="store_order_item.php?id=<?php echo $row['id']; ?>">Click here to order</a>    </td>
-    </tr>
+      while ($row = mysqli_fetch_array($result))
+      {
+      ?>
+          <tr>
+            <th scope="row"><?php echo $row['id']; ?></th>
+            <td><?php echo $row['description']; ?></td>
+            <td><?php echo $row['size']; ?></td>
+            <td><?php echo $row['price']; ?></td>
+            <td><a href="store_order_item.php?id=<?php echo $row['id']; ?>">Click here to order</a>    </td>
+          </tr>
 
-  <?php
+        <?php
 
-}
-
-
-?>
-  
-  </tbody>
-</table>
+      }
 
 
-</div> <!-- close the container -->
+      ?>
+        
+        </tbody>
+      </table>
+
+
+      </div> <!-- close the container -->
     
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING BELOW THIS LINE -->

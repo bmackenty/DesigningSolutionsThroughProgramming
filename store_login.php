@@ -96,13 +96,13 @@ unset($_SESSION['error_no_email']);
 
     <form class="mb-5" action="store_login_process.php" method="POST">
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="email_address">Email address</label>
+            <input name="email" type="email" class="form-control" id="email_address" aria-describedby="emailHelp">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            <label for="user_password">Password</label>
+            <input name="password" type="password" class="form-control" id="user_password">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

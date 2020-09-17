@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </head>
@@ -57,18 +56,13 @@
       <h2>Thank you for registering</h2>
     </div>
   </div>
-
-
       <div class="alert alert-primary alert-dismissible fade show" role="alert">
         <strong>Thank you</strong> for registering. We will need to create your account.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-
-
-
-    <form action="store_register_process.php" method="POST">
+    <form action="store_register_process.php" method="POST" class="mb-5">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -86,7 +80,6 @@
   
   
   
-
     </div> <!-- close the container -->
     <footer class="footer mt-auto mt-4 py-3 bg-secondary text-white text-center">
       <div class="container">

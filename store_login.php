@@ -64,7 +64,6 @@
         session_start();
         include('store_navbar.php'); 
     ?>
-    <div class="container mt-5">
 
 <?php 
 if ($_SESSION['error_wrong_password']){
@@ -95,7 +94,7 @@ if ($_SESSION['error_no_email']){
 unset($_SESSION['error_no_email']);
 ?>
 
-    <form action="store_login_process.php" method="POST">
+    <form class="mb-5" action="store_login_process.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -116,7 +115,7 @@ unset($_SESSION['error_no_email']);
     </div> <!-- close the container -->
     <footer class="footer mt-auto mt-4 py-3 bg-secondary text-white text-center">
       <div class="container">
-        <span >Thank you for visiting our site. :-) </span>
+        <span>Thank you for logging in. </span>
       </div>
     </footer>
     <!-- =========================================== -->

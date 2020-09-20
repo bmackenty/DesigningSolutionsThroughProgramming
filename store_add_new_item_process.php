@@ -16,6 +16,5 @@ $result = mysqli_query($connect,
     VALUES ('$quantity', '$size', '$description','$category','$image','$price');");
 
 
+header('location:store_control_panel.php');
 ?>
-
-<a href="inventory.php">Click here to go back to inventory</a>

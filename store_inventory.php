@@ -22,7 +22,7 @@
             <th scope="col">Description</th>
             <th scope="col">Size</th>
             <th scope="col">Cost</th>
-            <th scope="col">Order this</th>
+            <th scope="col">image</th>
           </tr>
         </thead>
       <tbody>  
@@ -40,7 +40,7 @@
             <td><?php echo $row['description']; ?></td>
             <td><?php echo $row['size']; ?></td>
             <td><?php echo $row['price']; ?></td>
-            <td><a href="store_order_item.php?id=<?php echo $row['id']; ?>">Click here to order</a>    </td>
+            <td><?php echo $row['image']; ?></td>
           </tr>
         <?php
       }

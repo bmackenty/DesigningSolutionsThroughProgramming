@@ -36,7 +36,7 @@ while ($row = mysqli_fetch_array($result))
 
     $_SESSION['logged_in'] = True;
     $_SESSION['logged_in_user'] = $email;
-    header('location:store_inventory.php');
+    header('location:store_control_panel.php');
 
   } else {
 

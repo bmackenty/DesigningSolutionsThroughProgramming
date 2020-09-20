@@ -33,9 +33,6 @@ if (mysqli_num_rows($check_for_duplicate_email) == 0) {
 
 } else {
 
-    // the lines below execute an SQL query that insert
-    //  a new user into our users table.
-
     echo "I am sorry you cant use that email address";
 
 }

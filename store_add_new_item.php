@@ -45,7 +45,7 @@
 
   <div class="form-group">
     <label for="image">Image</label>
-    <input name="image" type="text" class="form-control" id="image"  placeholder="Enter image">
+    <input name="image" type="text" class="form-control" id="image"  placeholder="Enter image. The image should be a url to an image file, that ends with .png or .jpg">
   </div>
 
 

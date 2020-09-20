@@ -59,7 +59,7 @@
       <td>Delete an inventory item from our school store.</td>
     </tr>
     <tr>
-      <td><a href="inventory.php">See Inventory</a></td>
+      <td><a href="store_inventory.php">See Inventory</a></td>
       <td>See store inventory</td>
     </tr>
     <tr>

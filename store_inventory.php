@@ -1,6 +1,6 @@
   
 <!doctype html>
-<!-- this file should be named store_add_new_item.php -->
+<!-- this file should be named store_inventory.php -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->

@@ -3,7 +3,7 @@
 // This file logs out a user.
 // in order to destroy a session we must first open one!
 // this page will redirect a user to index.php after loggin out. 
-// This file should be named logout.php
+// This file should be named store_logout.php
 
 session_start();
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- this file should be named store_inventory.php -->
+<!-- this file should be named store_delete_item.php -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->

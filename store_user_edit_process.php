@@ -12,7 +12,7 @@ if (mysqli_num_rows($check_for_duplicate_email) == 0) {
     $result = mysqli_query($connect, "UPDATE users
     SET email = '$email'
     WHERE id LIKE '$user_to_edit';");
-    header('location:store_edit_users.php');
+    header('location:store_control_panel.php');
 } else {
     echo "I'm sorry, an email already exists!";
 }

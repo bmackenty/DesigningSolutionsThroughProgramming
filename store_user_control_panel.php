@@ -1,6 +1,6 @@
 
 <!doctype html>
-<!-- this file should be saved as store_setup.php -->
+<!-- this file should be saved as store_user_control_panel.php -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->

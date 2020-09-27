@@ -176,6 +176,75 @@ die;
 
 
 <?php 
+$filename = 'store_edit_item.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_edit_item.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_edit_item.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_edit_item.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'store_edit_item_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_edit_item_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_edit_item_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_edit_item_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'store_update_edited_item.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_update_edited_item.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_update_edited_item.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_update_edited_item.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+
+
+
+<?php 
 $filename = 'store_control_panel.php';
 if (file_exists($filename)) { ?>
     <div class="alert alert-success" role="alert">
@@ -219,6 +288,127 @@ die;
 
 
 <?php 
+$filename = 'store_login.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_login.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_login.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_login.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+<?php 
+$filename = 'store_login_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_login_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_login_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_login_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+
+
+<?php 
+$filename = 'store_register_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_register_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_register_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_register_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+
+<?php 
+$filename = 'store_register.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_register.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_register.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_register.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+
+
+<?php 
+$filename = 'store_login_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_login_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_login_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_login_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+
+
+
+
+
+
+
+<?php 
 $filename = 'store_delete_item.php';
 if (file_exists($filename)) { ?>
     <div class="alert alert-success" role="alert">
@@ -239,6 +429,26 @@ die;
 }
 ?>
 
+<?php 
+$filename = 'store_delete_item_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_delete_item_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_delete_item_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_delete_item_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
 
 
 

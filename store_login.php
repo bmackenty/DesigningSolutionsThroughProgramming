@@ -12,7 +12,10 @@
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
     <!-- =========================================== -->
-
+    <?php 
+        session_start();
+        include('store_navbar.php'); 
+    ?>
 <div class="container mt-5">
   
   <div class="row">
@@ -22,11 +25,6 @@
   </div>
 
 
-  
-      <?php 
-        session_start();
-        include('store_navbar.php'); 
-    ?>
 
 <?php 
 if ($_SESSION['error_wrong_password']){
@@ -69,11 +67,6 @@ unset($_SESSION['error_no_email']);
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  
-  
-  
-  
-  
 
     </div> <!-- close the container -->
     <footer class="footer mt-auto mt-4 py-3 bg-secondary text-white text-center">

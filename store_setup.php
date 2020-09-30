@@ -401,13 +401,6 @@ die;
 ?>
 
 
-
-
-
-
-
-
-
 <?php 
 $filename = 'store_delete_item.php';
 if (file_exists($filename)) { ?>
@@ -451,7 +444,112 @@ die;
 ?>
 
 
+<?php 
+$filename = 'store_user_control_panel.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_user_control_panel.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_user_control_panel.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_user_control_panel.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
 
+
+<?php 
+$filename = 'store_user_delete_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_user_delete_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_user_delete_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_user_delete_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'store_user_edit.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_user_edit.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_user_edit.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_user_edit.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'store_user_edit.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>store_user_edit_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>store_user_edit_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/store_user_edit_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$count_query = mysqli_query($connect, "SELECT COUNT(id) AS total FROM items;");
+while ($row = mysqli_fetch_assoc($count_query)){
+    $total_items =  $row['total'];
+}
+if ($total_items > 6) { ?>
+    <div class="alert alert-success" role="alert">
+    You have at least 6 items in your items table, which is a good thing. 
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE at least 6 items in your items table. Please <a href="store_add_new_item.php" target="_blank">add more items to your store!</a>
+    </div>
+<?php  
+die;
+}
+?>
 
     <!-- =========================================== -->
     <!-- PLEASE DO NOT EDIT ANYTHING BELOW THIS LINE -->

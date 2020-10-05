@@ -537,7 +537,7 @@ $count_query = mysqli_query($connect, "SELECT COUNT(id) AS total FROM items;");
 while ($row = mysqli_fetch_assoc($count_query)){
     $total_items =  $row['total'];
 }
-if ($total_items > 6) { ?>
+if ($total_items >= 6) { ?>
     <div class="alert alert-success" role="alert">
     You have at least 6 items in your items table, which is a good thing. 
     </div>

@@ -7,7 +7,7 @@
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="inventory.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="store_inventory.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="store_control_panel.php">Control Panel</a>

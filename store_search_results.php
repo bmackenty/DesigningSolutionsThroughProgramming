@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- this file should be named search_results.php -->
+<!-- this file should be named store_search_results.php -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->

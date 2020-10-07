@@ -28,7 +28,7 @@ $row_counter = 0;
   <!-- begin search bar-->
     <div class="row">
         <div class="col-12">
-            <form action="search_results.php" method="POST" class="form-inline">
+            <form action="store_search_results.php" method="POST" class="form-inline">
                 <div class="input-group" style="width:100%;">
                     <input type="search" name="search" class="form-control" placeholder="Enter your search term">
                     <div class="input-group-append">

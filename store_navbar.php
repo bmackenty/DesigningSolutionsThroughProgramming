@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="store_logout.php">Logout</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="store_cart.php">Shopping Cart</a>
+                    </li>
                 <?php
                 } else {
                     ?>
@@ -35,10 +38,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="store_register.php">Register</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="store_cart.php">Shopping Cart</a>
+                </li>
                     <?php
                 }
                 ?>
-
             </ul>
         </div>
     </nav>

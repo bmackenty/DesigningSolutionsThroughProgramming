@@ -81,6 +81,33 @@ if (!$connect) { ?>
     <!-- start MySQL tables check / creation         -->
     <!-- =========================================== -->
 
+    <?php 
+$query_test_user_table = mysqli_query($connect, "select 1 FROM cart LIMIT 1;");
+if($query_test_user_table !== FALSE)
+{ ?>
+    <div class="alert alert-success" role="alert">
+    You have a <strong>'cart'</strong> table in your database. That's good. 
+    </div>
+<?php }
+else
+{
+    $sql_create_users = "CREATE TABLE cart (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        item_id TEXT NULL,
+        user_id TEXT NULL
+        )";
+    mysqli_query($connect, $sql_create_users); ?>
+        <div class="alert alert-success" role="alert">
+    You didn't have a <strong>'cart'</strong> table in your database, but I've created one for you.  
+    </div>
+    <?php
+}
+?>
+
+
+
+
+
 
 <?php 
 $query_test_user_table = mysqli_query($connect, "select 1 FROM users LIMIT 1;");
@@ -537,7 +564,7 @@ $count_query = mysqli_query($connect, "SELECT COUNT(id) AS total FROM items;");
 while ($row = mysqli_fetch_assoc($count_query)){
     $total_items =  $row['total'];
 }
-if ($total_items >= 6) { ?>
+if ($total_items > 6) { ?>
     <div class="alert alert-success" role="alert">
     You have at least 6 items in your items table, which is a good thing. 
     </div>

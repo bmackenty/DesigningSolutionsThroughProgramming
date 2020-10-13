@@ -33,9 +33,10 @@ while ($row = mysqli_fetch_array($result))
 
     // this conditional is only true is the password which was entered in our form 
     // is the same as the encypted password stored in our database. 
-
+    $logged_in_user_id = $row['id'];
     $_SESSION['logged_in'] = True;
     $_SESSION['logged_in_user'] = $email;
+    $_SESSION['logged_in_user_id'] = $logged_in_user_id;
     header('location:store_control_panel.php');
 
   } else {

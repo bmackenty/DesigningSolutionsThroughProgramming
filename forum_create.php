@@ -47,7 +47,7 @@ $query_get_all_forums = mysqli_query($connect, "SELECT * FROM forum;");
 if (mysqli_num_rows($query_get_all_forums) != 0){
   ?>
 <div class="alert alert-primary mt-4" role="alert">
-  The table below is a list of existing forums in your database_inc
+  The table below is a list of existing forums in your database.
 </div>
 
 

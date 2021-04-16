@@ -1,0 +1,217 @@
+<!doctype html>
+<!-- this file should be named forum_view_no_threads.php -->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+<body>
+    <!-- =========================================== -->
+    <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
+    <!-- =========================================== -->
+
+<?php 
+session_start();
+include('store_navbar.php');
+
+// The line below opens a connection to our database and authenticates this script to access the database. 
+include('database_inc.php');
+?>
+<!-- the line below opens a container where all our content will "live inside" --> 
+<div class="container mt-3">
+
+<?php
+// We need to know what forum we are working with. We do this by GET-ting the forum id in the URL bar. 
+$forum_id = $_GET['forum_id'];
+
+// We have to be careful though, because someone could accidently change the variables in the 
+// address bar. So we sanitize it, ensuring it is only an integer and nothing else. 
+$forum_id = filter_var($forum_id, FILTER_SANITIZE_NUMBER_INT);
+
+// we need to track which forum we are working with across different pages in our forum.
+// this session variable is set here: 
+$_SESSION['forum_id'] = $forum_id;
+
+
+// Here we SELECT the forum from our database table named "forum". 
+$query_get_forum_data = mysqli_query($connect,"SELECT * FROM forum WHERE id = '$forum_id';");
+
+// If we can't find that forum in our table (if the results return zero rows of data), 
+// we should let the user know.
+if (mysqli_num_rows($query_get_forum_data) == 0){
+  ?>
+    <div class="alert alert-warning" role="alert">
+      I can't find that forum <a href="forum_index.php" class="alert-link">Click here to return</a> to the forum index. 
+    </div>
+
+  <?php
+  // the line below stops our PHP script immediately. If there is no forum ID, we don't want 
+  // our script to continue.
+  die;
+
+} else {
+
+// however, if there is a forum, we want to get some data from the forum
+while($row_get_forum_data = mysqli_fetch_array($query_get_forum_data)){
+
+// below we are fetching the name and description of the forum from our database and
+// assigning them to local variables. 
+$forum_name = $row_get_forum_data['forum_name'];
+$forum_description = $row_get_forum_data['forum_description'];
+}
+?>
+
+<!-- the line below is the header block that shows the name of the forum -->
+<div class="alert alert-primary mt-3 mb-2" role="alert">
+ <p>Welcome to <a href="forum_index.php"><?php echo $forum_name; ?></a></p>
+ <small><?php echo $forum_description; ?></small>
+</div>
+
+<!-- the lines below are only for developers and should be erased after you understand them -->
+<div class="alert alert-light" role="alert">
+  <p>
+  This page is shows the topics and threads for one forum. We get the forum ID from the URL (look above). On this page we allow 
+  anyone to post a new topic. You might want to only allow logged in users to do this. 
+  </p>
+</div>
+
+<?php
+// below we want to get all the threads which have a parent_id of the forum_id. 
+$query_get_topics = mysqli_query($connect, "SELECT * FROM threads WHERE parent_id = '$forum_id';");
+
+// if there are no  topics for this forum_id, we tell the user. 
+if(mysqli_num_rows($query_get_topics) == 0){
+?>
+    <div class="alert alert-warning" role="alert">
+      There are no topics associated with this forum. <strong>Be the first to post a new topic</strong>
+    </div>
+
+<?php 
+} else {
+// show all topics and threads. The "main view" of our forum: 
+?>
+<div class="row">
+  <div class="col-12 text-right">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#post_new_topic">
+      Post a new topic in <?php echo $forum_name; ?>
+    </button>
+  </div>
+</div>
+
+
+
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Topic</th>
+      <th scope="col">Posted</th>
+      <th scope="col">Author</th>
+      <th scope="col">Replies</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+<?php 
+// the lines below we process the results from the query on line 83. 
+while($row_get_topics = mysqli_fetch_array($query_get_topics)){
+  $current_topic = $row_get_topics['id'];
+  
+  // this is where we count the number of replies for a topic. 
+  $query_count_threads = mysqli_query($connect, "SELECT COUNT(*) AS id FROM threads WHERE parent_id = '$current_topic';");
+  while($row_count_threads = mysqli_fetch_array($query_count_threads)){
+      $replies = $row_count_threads['id'];
+  }
+
+  ?>
+    <tr>
+        <td>    
+            <a target="_new" href="forum_thread_view.php?topic_id=<?php echo $row_get_topics['id']; ?>"> 
+            <?php echo $row_get_topics['thread_subject']; ?></a> 
+        </td>
+        <td>
+            <?php echo $row_get_topics['thread_date']; ?>
+        </td>
+        <td>
+            <?php echo $row_get_topics['thread_owner_id']; ?>
+        </td>
+        <td>
+            <?php echo $replies; ?>
+        </td>
+    </tr>
+  </div>
+</div>
+
+<?php 
+    }
+    ?>
+    </table>
+    <?php
+  }
+}
+?>
+
+<!-- This forum uses modals, which are kind of fun. read the bootstrap documentation
+https://getbootstrap.com/docs/4.0/components/modal/ to learn more.  -->
+<div class="modal fade" id="post_new_topic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="post_new_topic_label">Post a new topic</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="forum_new_thread_process.php" method="POST">
+    <div class="form-group">
+        <label for="topic_subject">Topic Subject</label>
+        <input type="text" name="thread_subject" class="form-control" id="thread_subject" placeholder="Please type your new topic here">
+    </div>
+    <div class="form-group">
+        <label for="thread_body">Topic</label>
+        <textarea name="thread_body" class="form-control" id="thread_body" rows="5" placeholder="Please type your topic here"></textarea>
+    </div>
+    <input type="hidden" name="parent_id" value="<?php echo $forum_id; ?>">
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Create new topic</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div> <!-- End post new topic modal --> 
+
+
+</div> <!-- close the container -->
+    <footer class="footer mt-4 py-3 bg-secondary text-white text-center">
+      <div class="container">
+        <span >Thank you for visiting our site. :-) </span>
+      </div>
+    </footer>
+    <!-- =========================================== -->
+    <!-- PLEASE DO NOT EDIT ANYTHING BELOW THIS LINE -->
+    <!-- =========================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <?php
+    // This code displays every defined variable and error message.
+    // It's quite helpful when you are debugging.
+
+    //   echo "<pre>";
+    //   print_r(get_defined_vars());
+    //   echo "</pre>";
+    ?>
+  
+  </body>
+</html>

@@ -86,10 +86,9 @@ $query_get_topics = mysqli_query($connect, "SELECT * FROM threads WHERE parent_i
 if(mysqli_num_rows($query_get_topics) == 0){
 ?>
     <div class="alert alert-warning" role="alert">
-      There are no topics associated with this forum. <strong> Be the first to post a new topic</strong>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#post_new_topic">
-      Post a new topic in <?php echo $forum_name; ?>
-    </button>
+      <!-- thank you to Maxim for contributing this code to our project -->
+      There are no topics associated with this forum. 
+      <a style="cursor: pointer;" data-toggle="modal" data-target="#post_new_topic"><strong> Be the first to post a new topic</strong></a>
     </div>
 
 <?php 

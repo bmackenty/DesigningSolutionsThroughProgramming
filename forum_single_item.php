@@ -1,5 +1,5 @@
 <?php
-// We need to know what champion we are working with. We do this by GET-ting the id in the URL bar. 
+// We need to know what item we are working with. We do this by GET-ting the id in the URL bar. 
 $id = $_GET['id'];
 
 // We have to be careful though, because someone could accidently change the variables in the 
@@ -8,7 +8,7 @@ $id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
 
 
 
-// below we want to get all the threads which have a parent_id of the champion_id. 
+// below we want to get all the threads which have a parent_id of the id of our item.. 
 $query_get_topics = mysqli_query($connect, "SELECT * FROM threads WHERE parent_id = '$id';");
 
 // if there are no  topics for this forum_id, we tell the user. 

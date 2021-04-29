@@ -1,5 +1,5 @@
 <?php
-// We need to know what champion we are working with. We do this by GET-ting the champion id in the URL bar. 
+// We need to know what champion we are working with. We do this by GET-ting the id in the URL bar. 
 $id = $_GET['id'];
 
 // We have to be careful though, because someone could accidently change the variables in the 

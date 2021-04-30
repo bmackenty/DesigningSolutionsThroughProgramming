@@ -11,7 +11,7 @@ $id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
 // below we want to get all the threads which have a parent_id of the id of our item.. 
 $query_get_topics = mysqli_query($connect, "SELECT * FROM threads WHERE parent_id = '$id';");
 
-// if there are no  topics for this forum_id, we tell the user. 
+// if there are no  topics for this id, we tell the user. 
 if(mysqli_num_rows($query_get_topics) == 0){
 ?>
     <div class="alert alert-warning" role="alert">
@@ -22,7 +22,7 @@ if(mysqli_num_rows($query_get_topics) == 0){
 
 <?php 
 } else {
-// show all topics and threads. The "main view" of our forum: 
+// show all topics and threads: 
 ?>
 <div class="row">
   <div class="col-12 text-right">

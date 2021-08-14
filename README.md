@@ -6,8 +6,6 @@ description: >-
 
 # Welcome
 
-For many students, this is their first programming class, where they write programs in an IDE, upload changes to a remote server, work with the Linux operating system, MYSQL, work with git \(a little\), and use PHP, CSS, HTML and the Bootstrap framework to create a "real" program.
-
 For many students, this is their first programming class, where they write programs in an IDE, upload changes to a remote server, work with the Linux operating system, MYSQL, work with git \(a little\), and use PHP, CSS, HTML and the Bootstrap framework to create a "real" program.  
   
 Students will use these templates as a starting point to build a web application. 

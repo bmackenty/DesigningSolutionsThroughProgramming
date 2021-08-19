@@ -558,6 +558,119 @@ die;
 }
 ?>
 
+<?php 
+$filename = 'forum_create.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>forum_create.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>forum_create.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/forum_create.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'forum_create_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>forum_create_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>forum_create_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/forum_create_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'forum_delete.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>forum_delete.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>forum_delete.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/forum_delete.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+<?php 
+$filename = 'forum_index.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>forum_index.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>forum_index.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/forum_index.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+<?php 
+$filename = 'forum_delete_process.php';
+if (file_exists($filename)) { ?>
+    <div class="alert alert-success" role="alert">
+    You have the file <strong>forum_delete_process.php</strong>
+    </div>
+<?php
+} else { ?>
+    <div class="alert alert-danger" role="alert">
+    Error: You do NOT HAVE the file <strong>forum_delete_process.php</strong>
+    </div>
+    <ul>
+        <li>get the file <a target="_new" href="https://github.com/bmackenty/DesigningSolutionsThroughProgramming/blob/master/forum_delete_process.php">from here</a>
+        <li>upload the file to our remote host in Germany</li>
+        <li>reload this file</li>
+    </ul>
+<?php  
+die;
+}
+?>
+
+
+
+
+
+
 
 <?php 
 $count_query = mysqli_query($connect, "SELECT COUNT(id) AS total FROM items;");

@@ -1,8 +1,8 @@
 <?php
 
 // This file logs out a user.
-// in order to destroy a session we must first open one!
-// this page will redirect a user to index.php after loggin out. 
+// in order to destroy a session we must first open one
+// this page will redirect a user to store_index.php after logging out. 
 // This file should be named store_logout.php
 
 session_start();
@@ -12,5 +12,5 @@ session_start();
     session_unset();
     session_destroy();
 
-header('location:store_login.php');
+header('location:store_index.php');
 ?>

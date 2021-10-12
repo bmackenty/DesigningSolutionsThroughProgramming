@@ -25,6 +25,6 @@ WHERE id LIKE $item_to_edit;");
 
 
 
-header('location:store_control_panel.php');
+header('location:store_index.php');
 
 ?>

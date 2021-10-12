@@ -16,5 +16,5 @@ $result = mysqli_query($connect,
     VALUES ('$quantity', '$size', '$description','$category','$image','$price');");
 
 
-header('location:store_control_panel.php');
+header('location:store_index.php');
 ?>

@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- this file should be named index.php -->
+<!-- this file should be named store_index.php -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->

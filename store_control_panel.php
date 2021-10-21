@@ -1,42 +1,18 @@
 <!doctype html>
-<!-- This file should be named store_control_panel.php -->
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-<body>
-    <!-- =========================================== -->
-    <!-- PLEASE DO NOT EDIT ANYTHING ABOVE THIS LINE -->
-    <!-- =========================================== -->
-
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <title>Control Panel</title>
+    </head>
+    <body>
     <?php 
     session_start();
     include('store_navbar.php'); 
     ?>
     <div class="container mt-5">
-    <?php
-    
-    if(!$_SESSION['logged_in']){
-    // we don't want a user who isn't logged in to see this page.
-    ?>
-    <br />
-    <br />
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Warning</strong> You must be logged-in to see this page.
-      <a href="store_inventory.php" class="alert-link">Click here to return to home page.</a>.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
 
-<?php   
-    } else {
-    ?>
 
 <table class="table table-hover table-bordered table-striped">
   <thead>
@@ -47,7 +23,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="store_add_new_item.php">New item</a></td>
+      <td><a href="store_add_item.php">New item</a></td>
       <td>Add a new inventory item to our school store.</td>
     </tr>
     <tr>
@@ -70,18 +46,11 @@
 </table>
 
 
-<?php
-    } // this closes the conditional for a logged-in or logged out user
-  ?>
-
-</div> <!-- close the container -->
-    <!-- =========================================== -->
-    <!-- PLEASE DO NOT EDIT ANYTHING BELOW THIS LINE -->
-    <!-- =========================================== -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+</div> <!-- closing container div --> 
+<?php 
+    include('store_footer.php');
+?>
+<!-- please don't touch anything below this line --> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
 </html>

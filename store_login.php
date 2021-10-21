@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <title>Welcome to our store</title>
+        <title>Please login</title>
     </head>
     <body>
 
@@ -27,25 +27,34 @@
 if ($_SESSION['error_wrong_password']){
     ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Error</strong> Wrong Password. Please try again.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+    <strong>Wrong password</strong> Please check your typing and try again.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 <?php
 }
 unset($_SESSION['error_wrong_password']);
 ?>
 
+<?php 
+if ($_SESSION['error_authentication']){
+    ?>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Error</strong> You cannot access that page without being an authenticated user.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php
+}
+unset($_SESSION['error_authentication']);
+?>
+
+
 
 <?php 
 if ($_SESSION['error_no_email']){
     ?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Error</strong> There is no email like that in our system.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>No email!</strong> We do not have an email like that in our system
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <?php
 }

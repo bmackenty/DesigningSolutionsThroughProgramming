@@ -13,9 +13,10 @@ if(mysqli_num_rows($query_users) == 0) {
     header('location:store_login.php');
 } else {
     while($result_users = mysqli_fetch_array($query_users)){
-        if($password == $result_users['password']) {
+        if(password_verify($password,$result_users['password'])){
                 $_SESSION['logged_in'] = True;
                 $_SESSION['logged_in_user'] = $result_users['email'];
+                $_SESSION['secret_key'] = "7277";
                 header('location:store_index.php');
             } else {
                 $_SESSION['error_wrong_password'] = True;
@@ -25,5 +26,3 @@ if(mysqli_num_rows($query_users) == 0) {
     }
 
 }
-
-

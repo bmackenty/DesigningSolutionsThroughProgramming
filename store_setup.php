@@ -119,6 +119,7 @@ else
     $sql_create_users = "CREATE TABLE users (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         email TEXT NULL,
+        role TEST NULL,
         password TEXT NULL
         )";
     mysqli_query($connect, $sql_create_users); ?>

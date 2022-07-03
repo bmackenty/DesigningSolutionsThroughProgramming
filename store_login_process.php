@@ -16,6 +16,8 @@ if(mysqli_num_rows($query_users) == 0) {
         if(password_verify($password,$result_users['password'])){
                 $_SESSION['logged_in'] = True;
                 $_SESSION['logged_in_user'] = $result_users['email'];
+                $_SESSION['logged_in_id'] = $result_users['id'];
+                $_SESSION['logged_in_role'] = $result_users['role'];
                 $_SESSION['secret_key'] = "7277";
                 header('location:store_index.php');
             } else {

@@ -23,7 +23,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="store_add_item.php">New item</a></td>
+      <td><a href="store_add_new_item.php">New item</a></td>
       <td>Add a new inventory item to our school store.</td>
     </tr>
     <tr>

@@ -31,6 +31,7 @@
                         <th scope="col">Item</th>
                         <th scope="col">Cost</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Remove</th>
 
                     </tr>
                 </thead>
@@ -45,6 +46,7 @@
                             <td><?php echo $result_item['name']; ?></td>
                             <td><?php echo $result_item['price']; ?></td>
                             <td><img src="<?php echo $result_item['image']; ?>"></td>
+                            <td><a href="store_remove_from_cart.php?item_id=<?php echo $result_item['id']; ?>">Remove</a></td>
                         </tr>
 
                     <?php

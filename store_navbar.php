@@ -2,7 +2,7 @@
 <?php 
 session_start(); 
 ?>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #009900;">
+<nav class="navbar justify-content-center navbar-expand-lg navbar-light" style="background-color: #009900;">
   <div class="container-fluid">
     <a class="navbar-brand" href="store_index.php">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,10 +41,19 @@ session_start();
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="store_logout.php">Logout</a>
         </li>
+        
+        
+        <?php
+        // This section of code will only show the control if the user has 'admin' as their role.  
+        // you can change the admin role in phpmyadmin to whatever you want.
+        // users are in the users table.
+        
+          if($_SESSION['logged_in_role'] == 'admin') {
+            ?>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="store_control_panel.php">control panel</a>
         </li>
-
+        <?php } ?>
 
 
 

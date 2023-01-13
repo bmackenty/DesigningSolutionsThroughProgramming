@@ -42,6 +42,10 @@
       <td><a href="store_user_control_panel.php">Control users</a></td>
       <td>See, edit, or delete users</td>
     </tr>
+    <tr>
+      <td><a href="store_all_open_orders.php">Orders</a></td>
+      <td>See all open orders</td>
+    </tr>
   </tbody>
 </table>
 

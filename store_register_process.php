@@ -1,5 +1,6 @@
 <?php
 // this file should be named store_register_process.php
+session_start();
 include('database_inc.php');
 
 // the lines below store the data submitted from a form (register.php) into variables
@@ -10,7 +11,7 @@ $password = $_POST['password'];
 // http://php.net/manual/en/mysqli.real-escape-string.php
 // this replaces SQL characters with safe characters.
 // it's not perfect, but it's better than nothing!!
-$email = mysqli_real_escape_string($connect,$email);
+$email = mysqli_real_escape_string($connect,$email); 
 
 // the line below creates an encryped password. 
 // we encrypt passwords so if an EVIL HACKER accesses our database
@@ -27,13 +28,18 @@ if (mysqli_num_rows($check_for_duplicate_email) == 0) {
 
     $result = mysqli_query($connect,
     "INSERT INTO `users` 
-    (`password`, `email`) 
-    VALUES ('$safe_password', '$email');");
-    header('location:store_control_panel.php');
+    (`password`, `email`, `role`) 
+    VALUES ('$safe_password', '$email', 'user');");
+    header('location:store_login.php');
 
 } else {
 
-    echo "I am sorry you cant use that email address";
+    // if we get here, it means the email address is already in the database
+    // so we need to set a session variable to tell the user about the error 
+    // and then send the user back to the register page
+    
+    $_SESSION['error_duplicate_email'] = True;
+    header('location:store_register.php');
 
 }
 

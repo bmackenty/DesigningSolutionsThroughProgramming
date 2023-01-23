@@ -39,8 +39,8 @@
         <!-- end search bar -->
 
         <form action="store_results.php" method="POST">
-
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+            <!-- please change the name attribute to match the column name in your database -->
+            <select name="breed" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                 <option value="%" selected>Choose a breed...</option>
                 <!-- the value is what will be sent to the database, so ensure it matches the data in your database -->
                 <option value="Labrador">Labrador</option>
@@ -48,8 +48,8 @@
                 <option value="Poodle">Poodle</option>
             </select>
 
-
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+            <!-- please change the name attribute to match the column name in your database -->
+            <select name="exercise" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                 <option value="%" selected>Choose an exercise...</option>
                 <!-- the value is what will be sent to the database, so ensure it matches the data in your database -->
                 <option value="lots">Lots of exercise</option>
@@ -59,7 +59,6 @@
 
             <button type="submit" class="btn btn-primary">Find the matching items!</button>
         </form>
-
 
 
 

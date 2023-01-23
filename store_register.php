@@ -1,4 +1,5 @@
 <!doctype html>
+<?php session_start(); ?>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -15,9 +16,24 @@
   
   <div class="row">
     <div class="col-12 text-center">
-      <h2>Thank you for registering</h2>
+      <h1>Thank you for registering</h1>
     </div>
   </div>
+
+  <?php 
+if ($_SESSION['error_duplicate_email']){
+    ?>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Error</strong> There is already an email like that in our system. Please try again.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php
+}
+unset($_SESSION['error_duplicate_email']);
+?>
+
+
+
 
         <div class="alert alert-primary alert-dismissible fade show" role="alert">
         <strong>Thank you</strong> For registering. Please be patient while we activate your account. 
@@ -47,4 +63,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>
-

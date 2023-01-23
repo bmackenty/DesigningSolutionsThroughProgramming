@@ -1,5 +1,6 @@
 <!doctype html>
 <!-- This file should be named: store_all_open_orders.php -->
+<!-- this file is meant to be used by a manager or admin -->
 <html lang="en">
 
 <head>
@@ -33,6 +34,7 @@
                 <?php
                 $query_view_cart = mysqli_query($connect, "SELECT * FROM cart ORDER BY user_id;");
                 while ($result = mysqli_fetch_array($query_view_cart)) {
+                    $order_id = $result['id'];
                     $current_item = $result['item_id'];
                     $query_item_information = mysqli_query($connect, "SELECT * FROM items WHERE id = '$current_item';");
                     while ($result_item = mysqli_fetch_array($query_item_information)) {
@@ -40,7 +42,7 @@
                         <tr>
                             <td><?php echo $result_item['name']; ?></td>
                             <td><?php echo $result_item['price']; ?></td>
-                            <td><a href="store_remove_from_cart.php?item_id=<?php echo $result_item['id']; ?>">Remove</a></td>
+                            <td><a href="store_admin_remove_from_cart.php?order_id=<?php echo $order_id; ?>">Remove</a></td>
                         </tr>
 
                     <?php

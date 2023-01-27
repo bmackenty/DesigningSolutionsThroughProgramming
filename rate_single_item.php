@@ -8,9 +8,8 @@
 
 include('database_inc.php');
 
-// we are getting the ID from the URL. Normally we would sanitize this to make 
-// this safe
-$id = $_GET['id'];
+// we are getting the ID from the URL.
+$id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
 
 $query_show_single_item = mysqli_query($connect, 

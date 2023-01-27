@@ -1,6 +1,11 @@
 <?php 
 // this file should be named rate_single_item.php
 
+// In this code snippet, a query is executed to retrieve the rating of an item from the "items" 
+// table where the id of the item is equal to the variable $id. The result of the query is stored
+// in the variable $query_get_rating. Then, the while loop is used to iterate through the rows of the 
+// result set returned by the query.
+
 include('database_inc.php');
 
 // we are getting the ID from the URL. Normally we would sanitize this to make 

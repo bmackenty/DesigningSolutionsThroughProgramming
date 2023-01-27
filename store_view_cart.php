@@ -24,7 +24,7 @@
         ?>
 
             <h1>Here are the items in your cart</h1>
-            <table class="table table-hover table-bordered table-striped">
+<table class="table table-hover table-bordered table-striped">
                 <thead>
                     <tr>
 
@@ -36,16 +36,30 @@
                     </tr>
                 </thead>
                 <?php
+                //This code block creates a table with 4 columns: Item, Cost, Image, and Remove.
+                //The table is given CSS classes for styling.
+                //The table head contains the column names.
+                
+                //The following query selects all rows from the "cart" table where the user_id is equal to the logged in user's id.
                 $query_view_cart = mysqli_query($connect, "SELECT * FROM cart WHERE user_id = '$logged_in_id';");
+                
+                //This while loop iterates through each row returned by the query.
                 while ($result = mysqli_fetch_array($query_view_cart)) {
+                    //The current item id is stored in the variable $current_item
                     $current_item = $result['item_id'];
+                    //This query selects all rows from the "items" table where the id is equal to the current item id.
                     $query_item_information = mysqli_query($connect, "SELECT * FROM items WHERE id = '$current_item';");
+                    //This while loop iterates through each row returned by the query.
                     while ($result_item = mysqli_fetch_array($query_item_information)) {
                     ?>
                         <tr>
+                            //This code prints the name of the item
                             <td><?php echo $result_item['name']; ?></td>
+                            //This code prints the price of the item
                             <td><?php echo $result_item['price']; ?></td>
+                            //This code displays the image of the item
                             <td><img src="<?php echo $result_item['image']; ?>"></td>
+                            //This code creates a link to remove the item from the cart.
                             <td><a href="store_remove_from_cart.php?item_id=<?php echo $result_item['id']; ?>">Remove</a></td>
                         </tr>
 

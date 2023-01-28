@@ -1,3 +1,5 @@
+<?php 
+
 // This file should be named store_add_new_item_process.php 
 
 include('database_inc.php');

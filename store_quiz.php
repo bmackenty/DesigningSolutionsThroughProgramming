@@ -42,21 +42,22 @@
 
         <form action="store_results.php" method="POST">
             <!-- please change the name attribute to match the column name in your database -->
-            <select name="breed" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-                <option value="%" selected>Choose a breed...</option>
+            <select name="size" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                <option value="%" selected>Choose a size...</option>
                 <!-- the value is what will be sent to the database, so ensure it matches the data in your database -->
-                <option value="Labrador">Labrador</option>
-                <option value="German Shepard">German Shepard</option>
-                <option value="Poodle">Poodle</option>
+                <option value="XXL">XXL</option>
+                <option value="L">Large</option>
+                <option value="M">Medium</option>
+                <option value="S">Small</option>
             </select>
 
             <!-- please change the name attribute to match the column name in your database -->
-            <select name="exercise" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-                <option value="%" selected>Choose an exercise...</option>
+            <select name="price" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                <option value="%" selected>Choose a price...</option>
                 <!-- the value is what will be sent to the database, so ensure it matches the data in your database -->
-                <option value="lots">Lots of exercise</option>
-                <option value="medium">Medium amount of exercise</option>
-                <option value="little">Little exercise</option>
+                <option value="99">High</option>
+                <option value="50">Medium</option>
+                <option value="10">Low</option>
             </select>
 
             <!-- Checkboxes work a little differently. -->

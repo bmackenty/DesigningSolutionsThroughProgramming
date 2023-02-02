@@ -23,7 +23,9 @@
             </div>
         </div>
 
+
         <!-- begin search bar-->
+        <!-- this is the search bar, it will send the search term to store_search_results.php -->
         <div class="row mb-4">
             <div class="col-12">
                 <form action="store_search_results.php" method="POST" class="form-inline">
@@ -57,7 +59,52 @@
                 <option value="little">Little exercise</option>
             </select>
 
-            <button type="submit" class="btn btn-primary">Find the matching items!</button>
+            <!-- Checkboxes work a little differently. -->
+            <!-- The name attribute should be the same for all the checkboxes in the group. -->
+            <!-- The value attribute should be different for each checkbox. -->
+            <!-- Checkbox data is stored as an array, so you will need to use a loop to access the data. -->
+            <!-- You will see this in the store_results.php file. -->
+
+            <fieldset class="border rounded-3 p-3">
+                <legend class="float-none w-auto px-3">Choose a category</legend>
+                <div class="form-check">
+                    <input name="category[]" class="form-check-input" type="checkbox" value="office" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Office
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input name="category[]" class="form-check-input" type="checkbox" value="drinking" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Drinking
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input name="category[]" class="form-check-input" type="checkbox" value="supplies" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Supplies
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input name="category[]" class="form-check-input" type="checkbox" value="fruit" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Fruit
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input name="category[]" class="form-check-input" type="checkbox" value="clothing" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Clothing
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input name="category[]" class="form-check-input" type="checkbox" value="legal" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Legal
+                    </label>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary mt-4">Find the matching items!</button>
         </form>
 
 

@@ -87,7 +87,12 @@ if(mysqli_num_rows($query_get_topics) == 0){
     <div class="alert alert-warning" role="alert">
       <!-- thank you to Maxim for contributing this code to our project -->
       There are no topics associated with this forum. 
-      <a style="cursor: pointer;" data-toggle="modal" data-target="#post_new_topic"><strong> Be the first to post a new topic</strong></a>
+      <!-- we don't want to allow anyone to post a new topic if they are not logged in. -->
+        <?php if(isset($_SESSION['logged_id'])){ ?>
+            <a style="cursor: pointer;" data-toggle="modal" data-target="#post_new_topic"><strong> Be the first to post a new topic</strong></a>
+        <?php } else { ?>
+            <a href="login.php"><strong> Login to post a new topic</strong></a>
+        <?php } ?>
     </div>
 
 <?php 
